@@ -1,5 +1,5 @@
 import Layout from "../Components/Layout";
-import data from "../Components/data/teams";
+import data from "../Components/data/index";
 
 export async function getStaticProps() {
 

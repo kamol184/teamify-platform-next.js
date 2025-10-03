@@ -1,7 +1,12 @@
 import Layout from "../Components/Layout";
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/index");
+
+  const baseUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "http://localhost:3000";
+
+  const res = await fetch(`${baseUrl}/api/index`);
   const data = await res.json();
 
   return {

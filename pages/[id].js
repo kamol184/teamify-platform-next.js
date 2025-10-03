@@ -1,9 +1,13 @@
-import Layout from "../../Components/Layout";
+import  Layout from "../Components/Layout/index";
 
 export async function getServerSideProps(context) {
   const { id } = context.params;
 
-  const res = await fetch(`http://localhost:3000/api/teams/${id}`);
+  const baseUrl = process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : `http://${context.req.headers.host}`;
+
+  const res = await fetch(`${baseUrl}/api/teams/${id}`);
   const data = await res.json();
 
   return {

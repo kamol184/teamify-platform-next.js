@@ -1,13 +1,14 @@
 import Layout from "../Components/Layout";
+import data from "../Components/data/teams";
 
 export async function getStaticProps() {
 
-  const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "http://localhost:3000";
+  // const baseUrl = process.env.VERCEL_URL
+  // ? `https://${process.env.VERCEL_URL}`
+  // : "http://localhost:3000";
 
-  const res = await fetch(`${baseUrl}/api/index`);
-  const data = await res.json();
+  // const res = await fetch(`${baseUrl}/api/index`);
+  // const data = await res.json();
 
   return {
     props: {
